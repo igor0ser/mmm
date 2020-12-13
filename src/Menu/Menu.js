@@ -1,10 +1,26 @@
 import React from 'react';
-import jquery from 'jquery';
+import $ from 'jquery';
 import cx from 'classnames';
 import './Menu.css';
 
+const onHover = (e) => {
+  console.group('onHover');
+  console.log({
+    currentTarget: e.currentTarget
+  });
+  console.groupEnd();
+  const $menuItem = $(e.currentTarget);
+  const $submenu = $('> .list', $menuItem);
+
+  // grab the menu item's position relative to its positioned parent
+  const { top, left } = $menuItem.position();
+
+  // $submenu.css({ top, left });
+  $submenu.css({ top: top + 36, left });
+}
+
 const Item = ({ item, depth }) => (
-  <li className={`item item_${depth}`}>
+  <li className={`item item_${depth}`} onMouseEnter={onHover}>
     <span className="label">{item.label}</span>
     {item.items?.length && (
       <List items={item.items} depth={depth + 1} />
