@@ -1,0 +1,65 @@
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.subSubmenu {
+  display: none;
+}
+
+.menu.scroll {
+  flex-wrap: nowrap;
+  overflow-y: scroll;
+}
+
+.menu {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 16px;
+  width: 600px;
+  border: 1px solid red;
+
+}
+
+
+.menuItem {
+  background: mistyrose;
+  white-space: nowrap;
+  /*   margin: 10px; */
+  flex-grow: 1;
+  padding: 16px;
+  cursor: pointer;
+  /*   position: relative; */
+  position: static;
+  border: 1px solid red;
+}
+
+.hack-wrapper {
+  position: absolute;
+}
+
+.menuItem:hover .submenu{
+  display: block;
+}
+
+@keyframes submenu {
+  from { opacity: 0; transform: translateY(-100%)}
+  to { opacity: 1; transform: translateY(0)}
+}
+
+.submenu {
+  display: none;
+  position: absolute;
+  animation: submenu 0.25s;
+  margin-top: 16px;
+  background: gold;
+  padding: 16px;
+  left: 0;
+  z-index: 1;
+  /*   position: fixed;
+    width: 100vw; */
+  /*   width: 100%; */
+}
+
+
