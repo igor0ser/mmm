@@ -3,7 +3,22 @@
   width: 720px;
   height: 100%;
   border: 1px dashed #fff;
-  position: relative;
   min-height: 100vh;
   padding: 16px;
+}
+
+.buttons {
+  top: 0;
+  left: 0;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  border: 1px solid aqua;
+}
+
+.buttons button {
+  margin: 8px;
+  padding: 8px;
+  cursor: pointer;
 }

@@ -1,65 +1,62 @@
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-100%)}
+  to { opacity: 1; transform: translateY(0)}
+}
+
 ul {
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
-.subSubmenu {
+.list_1,
+.list_2 {
   display: none;
 }
 
-.menu.scroll {
+.menu {
+  width: 600px;
+  position: relative;
+}
+
+.menu > .list {
+  display: flex;
+  flex-wrap: wrap;
+  border: 1px solid #fff;
+}
+
+.menu.scroll > .list {
   flex-wrap: nowrap;
   overflow-y: scroll;
 }
 
-.menu {
-  display: flex;
-  flex-wrap: wrap;
-  margin: 16px;
-  width: 600px;
-  border: 1px solid red;
-
-}
-
-
-.menuItem {
-  background: mistyrose;
+.item {
   white-space: nowrap;
-  /*   margin: 10px; */
   flex-grow: 1;
-  padding: 16px;
-  cursor: pointer;
-  /*   position: relative; */
   position: static;
-  border: 1px solid red;
 }
 
-.hack-wrapper {
-  position: absolute;
+.item > .label {
+  display: block;
+  padding: 10px;
+  margin: 4px;
+  cursor: pointer;
+  border: 1px solid #fff;
 }
 
-.menuItem:hover .submenu{
+.item:hover > .list{
   display: block;
 }
 
-@keyframes submenu {
-  from { opacity: 0; transform: translateY(-100%)}
-  to { opacity: 1; transform: translateY(0)}
-}
-
-.submenu {
+.list_1 {
   display: none;
   position: absolute;
-  animation: submenu 0.25s;
+  animation: fadeIn 0.25s;
   margin-top: 16px;
   background: gold;
   padding: 16px;
   left: 0;
   z-index: 1;
-  /*   position: fixed;
-    width: 100vw; */
-  /*   width: 100%; */
 }
 
 

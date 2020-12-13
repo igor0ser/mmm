@@ -1,0 +1,123 @@
+{
+  "items": [
+    {
+      "label": "HOME",
+      "items": [
+        {
+          "label": "About",
+          "link": {
+            "href": "./about",
+            "target": "_self"
+          }
+        },
+        {
+          "label": "Anchor 1",
+          "link": {
+            "href": "./",
+            "target": "_self",
+            "anchorCompId": "comp-khvv4rln"
+          }
+        }
+      ],
+      "link": {
+        "href": "./",
+        "target": "_self"
+      }
+    },
+    {
+      "label": "About",
+      "link": {
+        "href": "./about",
+        "target": "_self"
+      }
+    },
+    {
+      "label": "Anchor 1",
+      "link": {
+        "href": "./",
+        "target": "_self",
+        "anchorCompId": "comp-khvv4rln"
+      }
+    },
+    {
+      "label": "Contacts",
+      "link": {
+        "href": "http://contacts.com",
+        "target": "_self",
+        "rel": "nofollow"
+      }
+    },
+    {
+      "label": "FAQ FAQ FAQ FAQ",
+      "link": {
+        "href": "http://faq.com",
+        "target": "_blank",
+        "rel": "nofollow noopener"
+      }
+    },
+    {
+      "label": "12",
+      "link": {
+        "href": "http://aa.aa",
+        "target": "_self",
+        "rel": "nofollow"
+      },
+      "items": [
+        {
+          "label": "123",
+          "link": {
+            "href": "http://asas.asa",
+            "target": "_blank",
+            "rel": "nofollow noopener"
+          }
+        },
+        {
+          "label": "dsf",
+          "link": {
+            "href": "http://asd.asd",
+            "target": "_blank",
+            "rel": "nofollow noopener"
+          }
+        }
+      ]
+    },
+    {
+      "label": "bmbnmnnmb",
+      "link": {},
+      "items": [
+        {
+          "label": "View created page",
+          "link": {
+            "href": "http://view.com",
+            "target": "_blank",
+            "rel": "nofollow noopener"
+          }
+        }
+      ]
+    },
+    {
+      "label": "without link",
+      "link": {}
+    },
+    {
+      "label": "insider",
+      "link": {}
+    },
+    {
+      "label": "Anchor 1",
+      "link": {
+        "href": "./",
+        "target": "_self",
+        "anchorCompId": "comp-khvv4rln"
+      }
+    },
+    {
+      "label": "qweqwe",
+      "link": {
+        "href": "http://qwe.qweqwe",
+        "target": "_blank",
+        "rel": "nofollow noopener"
+      }
+    }
+  ]
+}
