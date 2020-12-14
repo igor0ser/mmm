@@ -13,8 +13,8 @@ const getListeners = (depth, align, direction, subMenuMode) => {
   return {};
 }
 
-const Item = ({ item, align, direction, depth }) => {
-  const listeners = getListeners(depth, align, direction);
+const Item = ({ item, align, direction, subMenuMode, depth }) => {
+  const listeners = getListeners(depth, align, direction, subMenuMode);
 
   return (
     <li
@@ -24,7 +24,13 @@ const Item = ({ item, align, direction, depth }) => {
       <a className="label" href="www.google.com">{item.label}</a>
       {item.items?.length && (
         <div className={`positionBox positionBox_${depth + 1}`}>
-          <List items={item.items} depth={depth + 1} align={align} direction={direction} />
+          <List
+            items={item.items}
+            depth={depth + 1}
+            align={align}
+            direction={direction}
+            subMenuMode={subMenuMode}
+          />
         </div>
       )}
     </li>
