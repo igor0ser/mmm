@@ -4,21 +4,27 @@
   height: 100%;
   border: 1px dashed #fff;
   min-height: 100vh;
+  height: 1400px;
   padding: 16px;
 }
 
 .buttons {
-  top: 0;
+  bottom: 0;
   left: 0;
   position: absolute;
   display: flex;
   flex-direction: column;
+}
+
+.buttons .row {
+  display: flex;
+  border: 1px solid coral;
   padding: 16px;
-  border: 1px solid aqua;
 }
 
 .buttons button {
   margin: 8px;
   padding: 8px;
   cursor: pointer;
+  flex-grow: 1;
 }

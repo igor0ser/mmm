@@ -105,6 +105,16 @@
     },
     {
       "label": "Anchor 1",
+      "items": [
+        {
+          "label": "qweqwe",
+          "link": {
+            "href": "http://qwe.qweqwe",
+            "target": "_blank",
+            "rel": "nofollow noopener"
+          }
+        }
+      ],
       "link": {
         "href": "./",
         "target": "_self",
