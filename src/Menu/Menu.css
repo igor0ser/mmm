@@ -49,12 +49,15 @@ ul {
   position: static;
 }
 
-.item > .label {
+.label {
   display: block;
   padding: 10px;
   margin: 4px;
   cursor: pointer;
   border: 1px solid #fff;
+  position: relative;
+  /* to prevent hover on fade-down menu */
+  z-index: 1;
 }
 
 .item:hover > .positionBox,
