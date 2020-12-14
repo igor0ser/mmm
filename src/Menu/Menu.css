@@ -19,14 +19,6 @@ ul {
   margin: 0;
 }
 
-.positionBox {
-  display: none;
-}
-
-.positionBox_1 {
-  position: fixed;
-}
-
 .menu {
   width: 600px;
   position: relative;
@@ -60,6 +52,30 @@ ul {
   z-index: 1;
 }
 
+.positionBox {
+  display: none;
+}
+
+.columnStretched .positionBox_2,
+.columnMenu .positionBox_2 {
+  display: block;
+}
+
+.positionBox_1 {
+  position: fixed;
+}
+
+.columnStretched .positionBox_1 {
+  position: fixed;
+  width: 100%;
+  left: 0;
+}
+
+.columnMenu .positionBox_1 {
+  position: absolute;
+  width: 100%;
+}
+
 .item:hover > .positionBox,
 .item:focus-within > .positionBox {
   display: block;
@@ -70,7 +86,7 @@ ul {
   background: gold;
 }
 
-.positionBox_2 {
+.flyout .positionBox_2 {
   position: absolute;
   top: 0;
 }
@@ -102,4 +118,3 @@ ul {
 .ltr .positionBox_2.force-revert-direction .list_2{
   animation-name: fadeRight;
 }
-

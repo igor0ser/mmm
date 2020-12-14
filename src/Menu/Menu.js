@@ -4,7 +4,10 @@ import './Menu.css';
 import { createListenersDepth0 } from './item0Hover';
 import { createListenersDepth1 } from './item1Hover';
 
-const getListeners = (depth, align, direction) => {
+const getListeners = (depth, align, direction, subMenuMode) => {
+  if (subMenuMode !== 'flyout') {
+    return {};
+  }
   if (depth === 0) return createListenersDepth0(align);
   if (depth === 1) return createListenersDepth1(direction);
   return {};
@@ -28,7 +31,7 @@ const Item = ({ item, align, direction, depth }) => {
   )
 }
 
-const List = (({ items, align, direction, depth = 0 }) => (
+const List = (({ items, align, direction, subMenuMode, depth = 0 }) => (
   <ul className={`list list_${depth}`}>
     {items.map((item, index) => (
       <Item
@@ -36,16 +39,22 @@ const List = (({ items, align, direction, depth = 0 }) => (
         depth={depth}
         align={align}
         direction={direction}
+        subMenuMode={subMenuMode}
         key={index}
       />
     ))}
   </ul>
 ))
 
-export const Menu = ({ items, menuMode, align, direction }) => {
+export const Menu = ({ items, menuMode, subMenuMode, align, direction }) => {
   return (
-    <nav className={cx('menu', menuMode, direction)}>
-      <List items={items} align={align} direction={direction} />
+    <nav className={cx('menu', menuMode, subMenuMode, direction)}>
+      <List
+        items={items}
+        align={align}
+        direction={direction}
+        subMenuMode={subMenuMode}
+      />
     </nav>
   )
 }
