@@ -5,7 +5,7 @@ import './App.css';
 
 const menuModes = ['scroll', 'wrap'];
 const aligns = ['left', 'center', 'right'];
-const subAligns = ['left', 'right'];
+const directions = ['ltr', 'rtl'];
 
 const ButtonRow = ({ variants, current, set }) => (
   <div className="row">
@@ -23,7 +23,7 @@ const ButtonRow = ({ variants, current, set }) => (
 const App = () => {
   const [menuMode, setMenuMode] = useState(menuModes[0]);
   const [align, setAlign] = useState(aligns[0]);
-  const [subAlign, setSubAlign] = useState(subAligns[0]);
+  const [direction, setDirection] = useState(directions[0]);
 
   return (
     <div className="wrapper">
@@ -31,12 +31,12 @@ const App = () => {
         items={items}
         menuMode={menuMode}
         align={align}
-        subAlign={subAlign}
+        direction={direction}
       />
       <div className="buttons">
         <ButtonRow variants={menuModes} current={menuMode} set={setMenuMode} />
         <ButtonRow variants={aligns} current={align} set={setAlign} />
-        <ButtonRow variants={subAligns} current={align} set={setSubAlign} />
+        <ButtonRow variants={directions} current={direction} set={setDirection} />
       </div>
     </div>
   );

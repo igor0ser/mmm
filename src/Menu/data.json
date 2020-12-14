@@ -82,6 +82,16 @@
       "items": [
         {
           "label": "123",
+          "items": [
+            {
+              "label": "xyz xyz xyz xyz",
+              "link": {
+                "href": "http://asas.asa",
+                "target": "_blank",
+                "rel": "nofollow noopener"
+              }
+            }
+          ],
           "link": {
             "href": "http://asas.asa",
             "target": "_blank",

@@ -8,6 +8,11 @@
   to { opacity: 1; transform: translateY(0)}
 }
 
+@keyframes fadeRight {
+  from { opacity: 0; transform: translateX(100%)}
+  to { opacity: 1; transform: translateY(0)}
+}
+
 ul {
   list-style: none;
   padding: 0;
@@ -18,7 +23,7 @@ ul {
   display: none;
 }
 
-.positionBox_0 {
+.positionBox_1 {
   position: fixed;
 }
 
@@ -53,22 +58,45 @@ ul {
 }
 
 .item:hover > .positionBox,
-.item:focus-within > .positionBox{
+.item:focus-within > .positionBox {
   display: block;
 }
 
 .list_1 {
   animation: fadeDown 0.25s;
   background: gold;
-  z-index: 1;
+}
+
+.positionBox_2 {
+  position: absolute;
+  top: 0;
 }
 
 .list_2 {
-  position: absolute;
-  animation: fadeLeft 0.25s;
-  left: 100%;
-  top: 0;
   background: goldenrod;
-  z-index: 0;
+  animation-duration: 0.25s;
+  /*animation-name: fadeLeft;*/
+}
+
+.ltr .positionBox_2,
+.rtl .positionBox_2.force-revert-direction {
+  left: 100%;
+  right: unset;
+}
+
+.ltr .positionBox_2 .list_2,
+.rtl .positionBox_2.force-revert-direction .list_2 {
+  animation-name: fadeLeft;
+}
+
+.rtl .positionBox_2,
+.ltr .positionBox_2.force-revert-direction{
+  right: 100%;
+  left: unset;
+}
+
+.rtl .positionBox_2  .list_2,
+.ltr .positionBox_2.force-revert-direction .list_2{
+  animation-name: fadeRight;
 }
 

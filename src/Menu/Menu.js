@@ -4,48 +4,48 @@ import './Menu.css';
 import { createListenersDepth0 } from './item0Hover';
 import { createListenersDepth1 } from './item1Hover';
 
-const getListeners = (depth, align, subAlign) => {
+const getListeners = (depth, align, direction) => {
   if (depth === 0) return createListenersDepth0(align);
-  if (depth === 1) return createListenersDepth1(subAlign);
+  if (depth === 1) return createListenersDepth1(direction);
   return {};
 }
 
-const Item = ({ item, align, subAlign, depth }) => {
-  const listeners = getListeners(depth, align, subAlign);
+const Item = ({ item, align, direction, depth }) => {
+  const listeners = getListeners(depth, align, direction);
 
   return (
     <li
       className={`item item_${depth}`}
       {...listeners}
     >
-      <a className="label" href="test">{item.label}</a>
+      <a className="label" href="www.google.com">{item.label}</a>
       {item.items?.length && (
-        <div className={`positionBox positionBox_${depth}`}>
-          <List items={item.items} depth={depth + 1} align={align} />
+        <div className={`positionBox positionBox_${depth + 1}`}>
+          <List items={item.items} depth={depth + 1} align={align} direction={direction} />
         </div>
       )}
     </li>
   )
 }
 
-const List = (({ items, align, subAlign, depth = 0 }) => (
+const List = (({ items, align, direction, depth = 0 }) => (
   <ul className={`list list_${depth}`}>
     {items.map((item, index) => (
       <Item
         item={item}
         depth={depth}
         align={align}
-        subAlign={subAlign}
+        direction={direction}
         key={index}
       />
     ))}
   </ul>
 ))
 
-export const Menu = ({ items, menuMode, align, subAlign }) => {
+export const Menu = ({ items, menuMode, align, direction }) => {
   return (
-    <nav className={cx('menu', menuMode === 'scroll' && 'scroll')}>
-      <List items={items} align={align} subAlign={subAlign} />
+    <nav className={cx('menu', menuMode, direction)}>
+      <List items={items} align={align} direction={direction} />
     </nav>
   )
 }

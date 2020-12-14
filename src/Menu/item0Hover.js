@@ -1,4 +1,4 @@
-const setSubmenuPosition = (align, menuItem) => {
+const setSubmenuPosition = (menuItem, align) => {
   const [label, positionBox] = menuItem.children;
   if (!positionBox) return;
 
@@ -30,7 +30,7 @@ let setProperPosition = null;
 export const createListenersDepth0 = (align) => {
   const onMouseEnter = (e) => {
     const menuItem = e.currentTarget;
-    setProperPosition = () => setSubmenuPosition(align, menuItem);
+    setProperPosition = () => setSubmenuPosition(menuItem, align);
     setProperPosition();
     window.addEventListener('scroll', setProperPosition);
   };
