@@ -52,7 +52,8 @@ ul {
   border: 1px solid #fff;
 }
 
-.item:hover > .positionBox {
+.item:hover > .positionBox,
+.item:focus-within > .positionBox{
   display: block;
 }
 

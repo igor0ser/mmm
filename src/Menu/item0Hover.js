@@ -28,15 +28,22 @@ const setSubmenuPosition = (align, menuItem) => {
 let setProperPosition = null;
 
 export const createListenersDepth0 = (align) => {
+  const onMouseEnter = (e) => {
+    const menuItem = e.currentTarget;
+    setProperPosition = () => setSubmenuPosition(align, menuItem);
+    setProperPosition();
+    window.addEventListener('scroll', setProperPosition);
+  };
+
+  const onMouseLeave = () => {
+    window.removeEventListener('scroll', setProperPosition);
+  };
+
+
   return {
-    onMouseEnter: (e) => {
-      const menuItem = e.currentTarget;
-      setProperPosition = () => setSubmenuPosition(align, menuItem);
-      setProperPosition();
-      window.addEventListener('scroll', setProperPosition);
-    },
-    onMouseLeave: () => {
-      window.removeEventListener('scroll', setProperPosition);
-    }
+    onMouseEnter,
+    onMouseLeave,
+    onFocusCapture: onMouseEnter,
+    onBlurCapture: onMouseLeave,
   }
 }

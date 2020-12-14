@@ -4,11 +4,6 @@ import './Menu.css';
 import { createListenersDepth0 } from './item0Hover';
 import { createListenersDepth1 } from './item1Hover';
 
-const createListenersByDepth = [
-  createListenersDepth0,
-  createListenersDepth1,
-]
-
 const getListeners = (depth, align, subAlign) => {
   if (depth === 0) return createListenersDepth0(align);
   if (depth === 1) return createListenersDepth1(subAlign);
@@ -23,7 +18,7 @@ const Item = ({ item, align, subAlign, depth }) => {
       className={`item item_${depth}`}
       {...listeners}
     >
-      <span className="label">{item.label}</span>
+      <a className="label" href="test">{item.label}</a>
       {item.items?.length && (
         <div className={`positionBox positionBox_${depth}`}>
           <List items={item.items} depth={depth + 1} align={align} />
