@@ -11,8 +11,10 @@ ul {
 
 .positionBox {
   display: none;
+}
+
+.positionBox_0 {
   position: fixed;
-  border: 1px dashed gold;
 }
 
 .menu {
@@ -52,8 +54,13 @@ ul {
 .list_1 {
   animation: fadeIn 0.25s;
   background: gold;
-  padding: 16px;
   z-index: 1;
 }
 
+.list_2 {
+  position: absolute;
+  left: 100%;
+  top: 0;
+  background: goldenrod;
+}
 

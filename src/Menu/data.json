@@ -5,6 +5,23 @@
       "items": [
         {
           "label": "About",
+          "items": [
+            {
+              "label": "About",
+              "link": {
+                "href": "./about",
+                "target": "_self"
+              }
+            },
+            {
+              "label": "Anchor 1",
+              "link": {
+                "href": "./",
+                "target": "_self",
+                "anchorCompId": "comp-khvv4rln"
+              }
+            }
+          ],
           "link": {
             "href": "./about",
             "target": "_self"

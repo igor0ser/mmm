@@ -9,9 +9,14 @@ const createListenersByDepth = [
   createListenersDepth1,
 ]
 
-const Item = ({ item, align, depth }) => {
-  const createListeners = createListenersByDepth[depth];
-  const listeners = createListeners?.(align);
+const getListeners = (depth, align, subAlign) => {
+  if (depth === 0) return createListenersDepth0(align);
+  if (depth === 1) return createListenersDepth1(subAlign);
+  return {};
+}
+
+const Item = ({ item, align, subAlign, depth }) => {
+  const listeners = getListeners(depth, align, subAlign);
 
   return (
     <li
@@ -28,23 +33,24 @@ const Item = ({ item, align, depth }) => {
   )
 }
 
-const List = (({ items, align, depth = 0 }) => (
+const List = (({ items, align, subAlign, depth = 0 }) => (
   <ul className={`list list_${depth}`}>
     {items.map((item, index) => (
       <Item
         item={item}
         depth={depth}
         align={align}
+        subAlign={subAlign}
         key={index}
       />
     ))}
   </ul>
 ))
 
-export const Menu = ({ items, menuMode, align }) => {
+export const Menu = ({ items, menuMode, align, subAlign }) => {
   return (
     <nav className={cx('menu', menuMode === 'scroll' && 'scroll')}>
-      <List items={items} align={align} />
+      <List items={items} align={align} subAlign={subAlign} />
     </nav>
   )
 }
