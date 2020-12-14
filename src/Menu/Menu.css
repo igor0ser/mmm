@@ -45,7 +45,7 @@ ul {
   border: 1px solid #fff;
 }
 
-.item:hover > .positionBox{
+.item:hover > .positionBox {
   display: block;
 }
 
