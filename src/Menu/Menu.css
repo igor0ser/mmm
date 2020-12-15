@@ -48,12 +48,17 @@ ul {
   cursor: pointer;
   border: 1px solid #fff;
   position: relative;
-  /* to prevent hover on fade-down menu */
-  z-index: 1;
+}
+
+/* to prevent hover on fade-down menu */
+.item:hover > .label {
+  z-index: 2;
+  border: 1px solid red;
 }
 
 .positionBox {
   display: none;
+  z-index: 1;
 }
 
 .columnStretched .positionBox_2,
@@ -94,7 +99,6 @@ ul {
 .list_2 {
   background: goldenrod;
   animation-duration: 0.25s;
-  /*animation-name: fadeLeft;*/
 }
 
 .ltr .positionBox_2,
