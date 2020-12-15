@@ -79,6 +79,7 @@ ul {
 .columnMenu .positionBox_1 {
   position: absolute;
   width: 100%;
+  left: 0;
 }
 
 .item:hover > .positionBox,
@@ -101,14 +102,14 @@ ul {
   animation-duration: 0.25s;
 }
 
-.ltr .positionBox_2,
-.rtl .positionBox_2.force-revert-direction {
+.flyout.ltr .positionBox_2,
+.flyout.rtl .positionBox_2.force-revert-direction {
   left: 100%;
   right: unset;
 }
 
-.ltr .positionBox_2 .list_2,
-.rtl .positionBox_2.force-revert-direction .list_2 {
+.flyout.ltr .positionBox_2 .list_2,
+.flyout.rtl .positionBox_2.force-revert-direction .list_2 {
   animation-name: fadeLeft;
 }
 
