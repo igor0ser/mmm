@@ -33,12 +33,14 @@ export const createListenersDepth0 = (align) => {
     setProperPosition = () => setSubmenuPosition(menuItem, align);
     setProperPosition();
     window.addEventListener('scroll', setProperPosition);
+    menuItem.parentNode.addEventListener('scroll', setProperPosition);
   };
 
-  const onMouseLeave = () => {
+  const onMouseLeave = (e) => {
+    const menuItem = e.currentTarget;
     window.removeEventListener('scroll', setProperPosition);
+    menuItem.parentNode.addEventListener('scroll', setProperPosition);
   };
-
 
   return {
     onMouseEnter,
