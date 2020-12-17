@@ -13,7 +13,7 @@ const getListeners = (depth, align, direction, subMenuMode) => {
   return {};
 }
 
-const Item = ({ item, align, direction, subMenuMode, depth }) => {
+const Item = ({ item, align, direction, subMenuMode, depth = 0 }) => {
   const listeners = getListeners(depth, align, direction, subMenuMode);
 
   return (
@@ -24,43 +24,43 @@ const Item = ({ item, align, direction, subMenuMode, depth }) => {
       <a className="label" href="www.google.com">{item.label}</a>
       {item.items?.length && (
         <div className={`positionBox positionBox_${depth + 1}`}>
-          <List
-            items={item.items}
-            depth={depth + 1}
-            align={align}
-            direction={direction}
-            subMenuMode={subMenuMode}
-          />
+          <List depth={depth + 1}>
+            {item.items.map((item, index) => (
+              <Item
+                item={item}
+                align={align}
+                direction={direction}
+                subMenuMode={subMenuMode}
+                key={index}
+              />
+            ))}
+          </List>
         </div>
       )}
     </li>
   )
 }
 
-const List = (({ items, align, direction, subMenuMode, depth = 0 }) => (
+const List = (({ children, depth = 0 }) => (
   <ul className={`list list_${depth}`}>
-    {items.map((item, index) => (
-      <Item
-        item={item}
-        depth={depth}
-        align={align}
-        direction={direction}
-        subMenuMode={subMenuMode}
-        key={index}
-      />
-    ))}
+    {children}
   </ul>
 ))
 
 export const Menu = ({ items, menuMode, subMenuMode, align, direction }) => {
   return (
     <nav className={cx('menu', menuMode, subMenuMode, direction)}>
-      <List
-        items={items}
-        align={align}
-        direction={direction}
-        subMenuMode={subMenuMode}
-      />
+      <List>
+        {items.map((item, index) => (
+          <Item
+            item={item}
+            align={align}
+            direction={direction}
+            subMenuMode={subMenuMode}
+            key={index}
+          />
+        ))}
+      </List>
     </nav>
   )
 }
